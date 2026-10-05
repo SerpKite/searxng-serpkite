@@ -31,7 +31,7 @@ The engine was tested against SearXNG commit `d48c4b555421e824342c51d68482dd0898
 PYTHONPATH=/path/to/searxng:$PWD python -m unittest discover -s tests -v
 ```
 
-Nine tests cover payload/authentication, filters, configuration validation, result mapping, empty results, unsafe links, and private error text. They use SearXNG's real result types and send no network requests.
+Nine tests cover payload/authentication, filters, configuration validation, result mapping, empty results, unsafe links, and private error text. They use SearXNG's real result types and send no network requests. The engine also loaded successfully through the pinned SearXNG checkout's real engine loader with a test key; no search request was sent.
 
 ## Support and license
 
