@@ -21,7 +21,7 @@ engines:
 
 Your instance sends requests to `https://api.serpkite.com/v1/search` with a Bearer header. Query text stays out of the URL. The engine maps SerpKite's own `results` envelope to SearXNG results, skips invalid links, and strips HTML from titles and snippets. It supports paging, language/region, SafeSearch and day/week/month/year filters.
 
-Each live page uses SerpKite credits. Supported result depths are 10, 20, 30, 50 and 100; deeper requests cost more. Read https://serpkite.com/pricing and https://serpkite.com/docs before changing the depth. Credits never expire; failed and empty searches are free. This integration is opt-in because a hosted search provider receives the query and authenticates requests to your account.
+Each live page uses SerpKite credits. The engine requests ten results per page, up to ten pages. Keep `results_per_page` at 10: SerpKite depth bundles require page 1 and cannot be mixed with regular paging. Read https://serpkite.com/pricing and https://serpkite.com/docs before changing the depth. Credits never expire; failed and empty searches are free. This integration is opt-in because a hosted search provider receives the query and authenticates requests to your account.
 
 ## Test
 

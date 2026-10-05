@@ -60,7 +60,7 @@ class SerpKiteTests(unittest.TestCase):
     def test_setup_accepts_supported_page_size(self):
         with (
             patch.object(serpkite, "api_key", "test-key"),
-            patch.object(serpkite, "results_per_page", 20),
+            patch.object(serpkite, "results_per_page", 10),
         ):
             serpkite.setup({})
 

@@ -25,6 +25,7 @@ api_key: str = ""
 results_per_page: int = 10
 categories = ["general", "web"]
 paging = True
+max_page = 10
 safesearch = True
 time_range_support = True
 base_url = "https://api.serpkite.com/v1/search"
@@ -34,8 +35,8 @@ def setup(_: dict[str, t.Any]) -> None:
     """Validate the instance configuration before accepting requests."""
     if not api_key:
         raise SearxEngineAPIException("A SerpKite API key is required")
-    if results_per_page not in (10, 20, 30, 50, 100):
-        raise ValueError("results_per_page must be 10, 20, 30, 50 or 100")
+    if results_per_page != 10:
+        raise ValueError("results_per_page must be 10 for paged searches")
 
 
 def request(query: str, params: "OnlineParams") -> None:
